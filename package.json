@@ -9,7 +9,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"nodemon index.js\" \"npm start --prefix=my-notes\""
+    "dev": "concurrently \"nodemon index.js\" \"npm start --prefix=my-notes\"",
+    "start": "node index.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
   "author": "",

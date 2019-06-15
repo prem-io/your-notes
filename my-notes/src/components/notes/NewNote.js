@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import axios from '../../config/config';
 import Form from './Form';
 
 export default class NoteNew extends React.Component {
@@ -13,7 +13,7 @@ export default class NoteNew extends React.Component {
 	}
 
 	handleSubmit(formData) {
-		axios.post('http://localhost:3001/notes', formData, {
+		axios.post('/notes', formData, {
 			headers: {
                 'x-auth': localStorage.getItem('userAuthToken')
             }

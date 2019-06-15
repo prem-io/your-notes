@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import axios from '../../config/config';
 import { Link } from 'react-router-dom';
 
 export default class UserRegister extends React.Component {
@@ -27,7 +27,7 @@ export default class UserRegister extends React.Component {
 			email: this.state.email,
 			password: this.state.password
 		}
-		axios.post('http://localhost:3001/users/register',formData)
+		axios.post('/users/register',formData)
 			.then(response => {
 				if(response.data.errors) {
 					alert(response.data.alert)

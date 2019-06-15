@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import axios from '../../config/config';
 import { Link } from 'react-router-dom';
 
 export default class CategoriesList extends React.Component {
@@ -11,7 +11,7 @@ export default class CategoriesList extends React.Component {
    }
 
    componentDidMount() {
-      axios.get('http://localhost:3001/categories')
+      axios.get('/categories')
          .then((response) => {
             this.setState({ categories: response.data})
          })

@@ -1,10 +1,10 @@
 import React from 'react';
-import axios from 'axios';
+import axios from '../../config/config';
 
 export default class UserLogout extends React.Component {
 
     componentDidMount() {
-        axios.delete('http://localhost:3001/users/logout', {
+        axios.delete('/users/logout', {
             headers: {
                 'x-auth': localStorage.getItem('userAuthToken')
             }

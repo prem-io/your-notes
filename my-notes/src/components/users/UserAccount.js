@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import axios from '../../config/config';
 
 export default class Account extends React.Component {
     constructor(props) {
@@ -10,7 +10,7 @@ export default class Account extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:3001/users/account', {
+        axios.get('/users/account', {
             headers: {
                 'x-auth': localStorage.getItem('userAuthToken')
             }

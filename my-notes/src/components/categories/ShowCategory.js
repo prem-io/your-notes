@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import axios from '../../config/config';
 
 export default class CategoryShow extends React.Component {
 	constructor(props) {
@@ -12,7 +12,7 @@ export default class CategoryShow extends React.Component {
 
    componentDidMount() {
       const id = this.props.match.params.id
-      axios.get(`http://localhost:3001/categories/${id}`)
+      axios.get(`/categories/${id}`)
          .then((response) => {
             this.setState(() => ({
                category: response.data,

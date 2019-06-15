@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import axios from '../../config/config';
 import { Link } from 'react-router-dom';
 
 export default class UserLogin extends React.Component {
@@ -25,7 +25,7 @@ export default class UserLogin extends React.Component {
 			email: this.state.email,
 			password: this.state.password
 		}
-		axios.post('http://localhost:3001/users/login',formData)
+		axios.post('/users/login',formData)
 			.then(response => {
 				console.log(response.data)
 				if(response.data.errors) {

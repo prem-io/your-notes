@@ -1,5 +1,5 @@
 import React from "react";
-import axios from 'axios';
+import axios from '../../config/config';
 import { Link } from 'react-router-dom';
 
 export default class NotesList extends React.Component {
@@ -11,7 +11,7 @@ export default class NotesList extends React.Component {
 	}
 
 	componentDidMount() {
-		axios.get('http://localhost:3001/notes', {
+		axios.get('/notes', {
 			headers: {
                 'x-auth': localStorage.getItem('userAuthToken')
             }
@@ -27,7 +27,7 @@ export default class NotesList extends React.Component {
 	handleRemove(id) {
 		const confirmRemove = window.confirm('Are you sure?')
 		if(confirmRemove) {
-			axios.delete(`http://localhost:3001/notes/${id}`)
+			axios.delete(`/notes/${id}`)
 				.then((response) => {
 					this.props.history.push('/')
 				})
