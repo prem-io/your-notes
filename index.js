@@ -2,10 +2,9 @@ const express = require('express')
 const app = express()
 const mongoose = require('./config/database')
 const cors = require('cors')
-
 const path = require("path");
 const port = process.env.PORT || 3001
-app.use(express.static(path.join(__dirname,"client/build")))
+app.use(express.static(path.join(__dirname,"my-notes/build")))
 
 const { usersRouter } = require('./api/controllers/UsersController')
 const { notesRouter } = require('./api/controllers/notesController')
