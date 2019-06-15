@@ -44,7 +44,7 @@ export default class Form extends React.Component {
 		const formData = {
 			title: this.state.title,
 			body: this.state.body,
-			category: this.state.category
+			category: this.state.category._id
 		}
 		this.props.handleSubmit(formData)
 	}
